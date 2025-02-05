@@ -154,11 +154,7 @@ export default function Hero() {
           </video>
         </div>
         <h1 className='special-font hero-heading absolute bottom-5 left-5 z-20 text-left text-[#dfdff2] '>
-          با
-          <a href="">
-            ز
-          </a>
-          ی
+         با <b className='text-yellow-300'>ز</b>ی
         </h1>
 
         <div className="absolute right-0 top-0 z-40 size-full">
@@ -168,9 +164,7 @@ export default function Hero() {
             </h1>
 
             <p className="mb-5  font-robert-regular text-[#F0F2FA]">
-              بازی رو شروع کنید
-              <br />
-              شروع بازی
+              اقتصاد بازی را به حرکت در آورید و <br /> وارد دنیای متاگیم شوید
             </p>
             <Button id="watch-trailer" title="مشاهده "
 
