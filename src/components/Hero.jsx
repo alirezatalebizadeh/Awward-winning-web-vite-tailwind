@@ -1,16 +1,21 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import Button from './Button'
+import { useGSAP } from "@gsap/react";
+import gsap from 'gsap'
+import { TiLocationArrow } from 'react-icons/ti'
+import { ScrollTrigger } from 'gsap/all'
+gsap.registerPlugin(ScrollTrigger)
 
 
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(1)
   const [hasClicked, setHasClicked] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
   const [loadedVideo, setLoadedVideo] = useState(0)
 
-  const totalVideo = 4;
+  const totalVideo = 3;
   const nextVdRef = useRef(null)
-
 
 
   const HandleMiniVdClick = () => {
@@ -34,11 +39,78 @@ export default function Hero() {
     setLoadedVideo(prev => prev + 1)
   }
 
+  useEffect(() => {
+    if (loadedVideo === totalVideo - 1) {
+      setLoadedVideo((prev) => prev + 1)
+    }
+  }, [loadedVideo])
+
+
+  useGSAP(
+    () => {
+      if (hasClicked) {
+        gsap.set("#next-video", { visibility: "visible" });
+        gsap.to("#next-video", {
+          transformOrigin: "center center",
+          scale: 1,
+          width: "100%",
+          height: "100%",
+          duration: 1,
+          ease: "power1.inOut",
+          onStart: () => nextVdRef.current.play(),
+        });
+        gsap.from("#current-video", {
+          transformOrigin: "center center",
+          scale: 0,
+          duration: 1.5,
+          ease: "power1.inOut",
+        });
+      }
+    },
+    {
+      dependencies: [currentIndex],
+      revertOnUpdate: true,
+    }
+  );
+
+  useGSAP(() => {
+    gsap.set("#video-frame", {
+      clipPath: 'polygon(10% 0%, 90% 0%, 98% 90%, 0% 95%)',
+      borderRadius: "0% 0% 40% 10%"
+    });
+
+    gsap.from("#video-frame", {
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      borderRadius: "0% 0% 0% 0%",
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: "#video-frame",
+        start: "center center",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  })
+
 
 
 
   return (
     <div className='relative h-dvh w-screen overflow-x-hidden'>
+      {
+        isLoading && (
+          <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
+            {/* https://uiverse.io/G4b413l/tidy-walrus-92 */}
+            <div className="three-body">
+              <div className="three-body__dot"></div>
+              <div className="three-body__dot"></div>
+              <div className="three-body__dot"></div>
+            </div>
+          </div>
+        )
+      }
+
+
       <div id='video-frame'
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-[#DFDFF0]"
       >
@@ -52,7 +124,8 @@ export default function Hero() {
                 loop
                 ref={nextVdRef}
                 src={getVdSource(upCommingVideoIndex + 1)}
-                muted id='current-video'
+                muted
+                id='current-video'
                 className='size-64 origin-center scale-50 object-cover object-center'
                 onLoadedData={HandleVdLoad}
               >
@@ -80,7 +153,7 @@ export default function Hero() {
 
           </video>
         </div>
-        <h1 className=' special-font hero-heading absolute bottom-5 right-5 text-blue-[#dfdff2] '>
+        <h1 className='special-font hero-heading absolute bottom-5 left-5 z-20 text-left text-[#dfdff2] '>
           با
           <a href="">
             ز
@@ -99,6 +172,10 @@ export default function Hero() {
               <br />
               شروع بازی
             </p>
+            <Button id="watch-trailer" title="مشاهده "
+
+              leftIcon={<TiLocationArrow />}
+              containerClass='bg-yellow-300 flex-center gap-1' />
 
           </div>
         </div>

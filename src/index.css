@@ -27,9 +27,13 @@
 .font-robert-regular {
   font-family: "robert-regular";
 }
+.font-general {
+  font-family: "general";
+}
 
 body {
   font-family: "general", sans-serif;
+  direction: rtl;
   @apply w-[100vw] bg-[#dfdff0] overflow-x-hidden;
 }
 .mask-clip-path {
