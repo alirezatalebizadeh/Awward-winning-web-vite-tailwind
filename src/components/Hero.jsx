@@ -143,7 +143,8 @@ export default function Hero() {
           >
 
           </video>
-          <video src={getVdSource(currentIndex === totalVideo - 1 ? 1 : currentIndex)}
+          <video
+            src={getVdSource(currentIndex === totalVideo - 1 ? 1 : currentIndex)}
             autoPlay
             loop
             muted
@@ -154,7 +155,7 @@ export default function Hero() {
           </video>
         </div>
         <h1 className='special-font hero-heading absolute bottom-5 left-5 z-20 text-left text-[#dfdff2] '>
-         با <b className='text-yellow-300'>ز</b>ی
+          با <b className='text-yellow-300'>ز</b>ی
         </h1>
 
         <div className="absolute right-0 top-0 z-40 size-full">
@@ -168,7 +169,7 @@ export default function Hero() {
             </p>
             <Button id="watch-trailer" title="مشاهده "
 
-              leftIcon={<TiLocationArrow />}
+              rightIcon={<TiLocationArrow className='rotate-[260deg]'/>}
               containerClass='bg-yellow-300 flex-center gap-1' />
 
           </div>
