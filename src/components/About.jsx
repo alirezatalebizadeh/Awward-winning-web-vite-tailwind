@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default function About() {
+  //! when use scroll , size's image incease
   useGSAP(() => {
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
@@ -26,11 +27,6 @@ export default function About() {
     });
   })
 
-
-
-
-
-
   return (
     <div id='about' className='min-h-screen w-screen'>
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
@@ -47,19 +43,12 @@ export default function About() {
           <p>بازی بزرگ آغاز می‌شود</p>
           <p className="text-gray-500">
             بازی ما تمامی بازیکنان از بازی‌ها و پلتفرم‌های مختلف، چه دیجیتال و چه فیزیکی، را در یک اقتصاد بازی یکپارچه گرد هم می‌آورد.
-
-
-
-
-
-
           </p>
         </div>
       </div>
       <div className="h-dvh w-screen" id='clip'>
         <div className="mask-clip-path about-image">
           <img src='/img/about.webp' alt="Background"
-
             className='absolute left-0 top-0 size-full object-cover' />
         </div>
       </div>
