@@ -5,7 +5,7 @@ import { TiLocationArrow } from "react-icons/ti";
 import Button from "./Button";
 
 
-const navs = [
+const navItems = [
   {
     title: "ارتباط با ما",
     link: "Contact"
@@ -58,23 +58,21 @@ export default function Navbar() {
     } else {
       audioElementRef.current.pause();
     }
-    console.log(isAudioPlaying);
-    
   }, [isAudioPlaying]);
 
 
   //! to hidden and visiblity navbar
   useEffect(() => {
     if (currentScrollY === 0) {
-      // Topmost position: show navbar without floating-nav
+      //! Topmost position: show navbar without floating-nav
       setIsNavVisible(true);
       navContainerRef.current.classList.remove("floating-nav");
     } else if (currentScrollY > lastScrollY) {
-      // Scrolling down: hide navbar and apply floating-nav
+      //! Scrolling down: hide navbar and apply floating-nav
       setIsNavVisible(false);
       navContainerRef.current.classList.add("floating-nav");
     } else if (currentScrollY < lastScrollY) {
-      // Scrolling up: show navbar with floating-nav
+      //! Scrolling up: show navbar with floating-nav
       setIsNavVisible(true);
       navContainerRef.current.classList.add("floating-nav");
     }
@@ -119,7 +117,7 @@ export default function Navbar() {
           {/* //! Navigation and audio btn */}
           <div className="flex h-full items-center">
             <div className="hidden md:block">
-              {navs.map((item, index) => (
+              {navItems.map((item, index) => (
                 <a
                   key={index}
                   href={`#${item.link.toLowerCase()}`}
@@ -142,7 +140,6 @@ export default function Navbar() {
               {[1, 2, 3, 4].map((bar) => (
                 <div
                   key={bar}
-
                   className={`indicator-line ${isIndicatorActive}`}
                   style={{
                     animationDelay: `${bar * 0.1}s`,

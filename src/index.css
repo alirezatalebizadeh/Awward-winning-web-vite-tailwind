@@ -31,6 +31,10 @@
   font-family: "general";
 }
 
+.font-circular-web {
+  font-family: "circular-web";
+}
+
 body {
   font-family: "general", sans-serif;
   direction: rtl;
@@ -110,7 +114,6 @@ body {
 
 .bento-title {
   font-family: "zentry";
-
   @apply uppercase md:text-6xl text-4xl font-black;
 }
 
