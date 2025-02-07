@@ -82,7 +82,7 @@ export default function Story() {
 
 
 
-        <div className="-mt-80 flex w-full justify-center md:-mt-64 md:ms-44 md:justify-start">
+        <div className="-mt-70 flex w-full justify-center sm:-mt-75 md:-mt-64 md:ms-44 md:justify-start z-20">
           <div className="flex h-full w-fit flex-col items-center md:items-end">
             <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
               جایی که قلمروها به هم می‌رسند، زنتری و ستون بی‌کران قرار دارند.
@@ -91,7 +91,7 @@ export default function Story() {
             <Button
               id="relm-btn"
               title="بازی کن"
-              containerClass="mt-5 self-start"
+              containerClass="mt-5 md:self-start"
             />
           </div>
         </div>
