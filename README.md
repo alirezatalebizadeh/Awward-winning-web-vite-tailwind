@@ -1,6 +1,15 @@
 <div align="center">
   <h3 align="center">وب سایت فوق گرافیکی بازی</h3>
 </div>
+![Capture](https://github.com/user-attachments/assets/5bd323a4-6db6-466c-ab3c-7b0927d3c793)
+
+![Capture1](https://github.com/user-attachments/assets/593d88ce-55a6-4783-937b-8c45e07b747f)
+
+![Capture2](https://github.com/user-attachments/assets/3c92de81-73d2-49ab-86b7-81a0ff605346)
+
+![Capture3](https://github.com/user-attachments/assets/d4395f91-c2fc-4a34-9c62-23048e3dbe90)
+
+
 
 ## 📋 <a name="table">فهرست مطالب</a>
 
