@@ -12,8 +12,8 @@ const Footer = () => {
         <footer className="w-screen bg-[#5542ff] py-4 text-black">
             <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row">
                 <p className="text-center text-sm font-light md:text-left">
-                    : ویرایش شده به وسیله
-                    <a href="https://alirezatalebizadeh.ir/">علیرضا طالبی زاده</a>
+                     ویرایش شده به وسیله
+                    {" :"}  <a href="https://alirezatalebizadeh.ir/">علیرضا طالبی زاده</a> {" "}
                 </p>
 
                 <div className="flex justify-center gap-4  md:justify-start">
@@ -34,7 +34,7 @@ const Footer = () => {
                     href="#privacy-policy"
                     className="text-center text-sm font-light hover:underline md:text-right"
                 >
-                   تقدیم به نگاهتون
+                    تقدیم به نگاهتون
                 </a>
             </div>
         </footer>

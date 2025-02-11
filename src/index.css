@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "circular-web";
-  src: url("/fonts/circularweb-book.woff2") format("woff2");
+  font-family: "IRANYekanX-Regular";
+  src: url("/fonts/woff/IRANYekanX-Regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: "general";
-  src: url("/fonts/general.woff2") format("woff2");
+  font-family: "IRANYekanX-Bold";
+  src: url("/fonts/woff/IRANYekanX-Bold.woff") format("woff");
 }
 
-@font-face {
+/* @font-face {
   font-family: "robert-medium";
   src: url("/fonts/robert-medium.woff2") format("woff2");
 }
@@ -23,22 +23,37 @@
 @font-face {
   font-family: "zentry";
   src: url("/fonts/zentry-regular.woff2") format("woff2");
-}
+} */
 .font-robert-regular {
-  font-family: "robert-regular";
+  font-family: "IRANYekanX-Regular" !important;
 }
 .font-general {
-  font-family: "general";
+  font-family: "IRANYekanX-Regular" !important;
 }
 
 .font-circular-web {
-  font-family: "circular-web";
+  font-family: "IRANYekanX-Regular" !important;
 }
 
 body {
-  font-family: "general", sans-serif;
+  font-family: "IRANYekanX-Regular" !important;
   direction: rtl;
   @apply w-[100vw] bg-[#dfdff0] overflow-x-hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b {
+  font-family: "IRANYekanX-Bold" !important;
+}
+
+a,
+p,
+span {
+  font-family: "IRANYekanX-Regular" !important;
 }
 .mask-clip-path {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
